@@ -100,7 +100,7 @@ class ScrollingActivity : AppCompatActivity() {
             })
 
             val searchPlate =  searchView.findViewById(androidx.appcompat.R.id.search_src_text) as EditText
-            searchPlate.hint = "Search"
+            searchPlate.hint = "검색키워드를 입력하세요"
             val searchPlateView: View =
                 searchView.findViewById(androidx.appcompat.R.id.search_plate)
             searchPlateView.setBackgroundColor(
