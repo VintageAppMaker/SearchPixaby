@@ -11,7 +11,7 @@ class MainViewModel :ViewModel(){
     var lst      : MutableLiveData< MutableList<Hits> > = MutableLiveData()
     var message   : MutableLiveData< String > = MutableLiveData()
 
-    var keyword   : String = "'"
+    var keyword   : String = " "
 
     var imageDataList = mutableListOf<Hits>()
 
