@@ -1,11 +1,15 @@
 # SearchPixaby
 Pixabay 검색
+> 무료 이미지 제공서비스인 Pixabay의 Open API를 이용한 검색 및 링크
+**Open API를 사용하기 위해서는 가입하여 Key**를 얻어야 한다. 무료이며 클클 몇 번으로 가능한 단순한 작업이다. 
 
 ![](intro2.gif)
 
 - retrofit
 - coroutine
 - pixabay API(무료이미지 사이트)
+
+
 
 1. [pixabay API site ](https://pixabay.com/ko/service/about/api/)에 로그인
 2. key값을 가져옴.
