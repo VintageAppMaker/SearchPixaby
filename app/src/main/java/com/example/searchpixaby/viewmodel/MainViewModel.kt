@@ -36,7 +36,7 @@ class MainViewModel :ViewModel(){
         // UI처리는 반드시 LiveData로 보낸다.
         // 그렇게 하지않으면 Context간의 차이로 App이 종료됨
         IORoutine({
-            val key = "21116100-19ad6791df39a87b3e57cda29"
+            val key = "Key입력"
             val q = sKeyWord
             val image_type = "photo"
             val data = api.function.listWithPage(key, q, image_type, page)
