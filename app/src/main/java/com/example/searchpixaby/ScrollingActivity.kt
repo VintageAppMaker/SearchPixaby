@@ -90,41 +90,43 @@ class ScrollingActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_scrolling, menu)
-        val searchItem: MenuItem = menu.findItem(R.id.action_search)
-        if (searchItem != null) {
-            var searchView = MenuItemCompat.getActionView(searchItem) as SearchView
-            searchView.setOnCloseListener(object : SearchView.OnCloseListener {
-                override fun onClose(): Boolean {
-                    return false
-                }
-            })
+        menu.findItem(R.id.action_search)?.let{
+            searchItem ->
+            (MenuItemCompat.getActionView(searchItem) as SearchView)?.apply {
+                setOnCloseListener(object : SearchView.OnCloseListener {
+                    override fun onClose(): Boolean {
+                        return false
+                    }
+                })
 
-            val searchPlate =  searchView.findViewById(androidx.appcompat.R.id.search_src_text) as EditText
-            searchPlate.hint = "검색키워드를 입력하세요"
-            val searchPlateView: View =
-                searchView.findViewById(androidx.appcompat.R.id.search_plate)
-            searchPlateView.setBackgroundColor(
-                ContextCompat.getColor(
-                    this,
-                    android.R.color.transparent
+                val searchPlate =  findViewById(androidx.appcompat.R.id.search_src_text) as EditText
+                searchPlate.hint = "검색키워드를 입력하세요"
+                val searchPlateView: View =
+                        findViewById(androidx.appcompat.R.id.search_plate)
+                searchPlateView.setBackgroundColor(
+                        ContextCompat.getColor(
+                                this@ScrollingActivity,
+                                android.R.color.transparent
+                        )
                 )
-            )
 
-            searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-                override fun onQueryTextSubmit(query: String?): Boolean {
-                    viewModel.initList(); nPageCount = 1
-                    viewModel.loadImage(query!!, nPageCount++)
-                    return false
-                }
+                setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+                    override fun onQueryTextSubmit(query: String?): Boolean {
+                        viewModel.initList(); nPageCount = 1
+                        viewModel.loadImage(query!!, nPageCount++)
+                        return false
+                    }
 
-                override fun onQueryTextChange(newText: String?): Boolean {
-                    return false
-                }
-            })
+                    override fun onQueryTextChange(newText: String?): Boolean {
+                        return false
+                    }
+                })
 
-            val searchManager =
-                getSystemService(Context.SEARCH_SERVICE) as SearchManager
-            searchView.setSearchableInfo(searchManager.getSearchableInfo(componentName))
+                val searchManager =
+                        getSystemService(Context.SEARCH_SERVICE) as SearchManager
+                setSearchableInfo(searchManager.getSearchableInfo(componentName))
+            }
+
         }
 
         return true
