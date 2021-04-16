@@ -3,6 +3,7 @@ package com.example.searchpixaby
 import android.app.SearchManager
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
 import android.opengl.Visibility
 import android.os.Bundle
@@ -42,7 +43,7 @@ class ScrollingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_scrolling)
         setSupportActionBar(findViewById(R.id.toolbar))
-        findViewById<CollapsingToolbarLayout>(R.id.toolbar_layout).title = "Pixabay로 검색"
+        findViewById<CollapsingToolbarLayout>(R.id.toolbar_layout).title = "Pixabay"
 
         recyclerView = findViewById<View>(R.id.recyclerView) as RecyclerView
         nestedScrollView = findViewById<SwipeRefreshLayout>(R.id.nestedScrollView) as NestedScrollView
@@ -103,6 +104,8 @@ class ScrollingActivity : AppCompatActivity() {
 
                 val searchPlate =  findViewById(androidx.appcompat.R.id.search_src_text) as EditText
                 searchPlate.hint = "검색키워드를 입력하세요"
+                searchPlate.setTextColor(Color.parseColor("#FFFFaa"))
+                searchPlate.setHintTextColor(Color.parseColor("#FFFFaa"))
                 val searchPlateView: View =
                         findViewById(androidx.appcompat.R.id.search_plate)
                 searchPlateView.setBackgroundColor(
