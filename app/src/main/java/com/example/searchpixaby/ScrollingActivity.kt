@@ -2,6 +2,8 @@ package com.example.searchpixaby
 
 import android.app.SearchManager
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.opengl.Visibility
 import android.os.Bundle
 import android.view.Menu
@@ -135,6 +137,11 @@ class ScrollingActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_search -> true
+            R.id.action_github -> {
+                val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/VintageAppMaker/SearchPixaby"))
+                startActivity(browserIntent)
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }

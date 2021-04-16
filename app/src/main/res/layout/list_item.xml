@@ -14,4 +14,16 @@
         android:scaleType="fitXY"
         android:src="@mipmap/ic_launcher" />
 
+    <TextView
+        android:id="@+id/txtCount"
+        android:layout_marginRight="5dp"
+        android:gravity="right"
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
 </RelativeLayout>

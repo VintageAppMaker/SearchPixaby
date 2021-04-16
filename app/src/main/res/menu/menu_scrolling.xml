@@ -9,4 +9,10 @@
         android:title="Search"
         app:actionViewClass="androidx.appcompat.widget.SearchView"
         app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_github"
+        android:icon="@android:drawable/ic_dialog_info"
+        android:title="Search"
+        app:showAsAction="always" />
 </menu>

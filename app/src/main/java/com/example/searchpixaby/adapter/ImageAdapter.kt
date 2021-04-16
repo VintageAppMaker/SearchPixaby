@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.searchpixaby.R
@@ -28,12 +29,14 @@ class ImageAdapter(var context: Context, var images: List<Hits>) :
         position: Int
     ) {
         val item = images[position]
+        holder.txtCount.text = "${item.downloads} downloads"
 
         // large일 경우, 트래픽도 고려해야 함
         Glide.with(context)
             .load(item.largeImageURL)
             .fitCenter()
             .into(holder.imgThumb)
+
 
         holder.imgThumb.setOnClickListener {
             val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(item.pageURL))
@@ -47,10 +50,13 @@ class ImageAdapter(var context: Context, var images: List<Hits>) :
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var imgThumb: ImageView
+        var txtCount: TextView
 
         init {
             imgThumb =
                 view.findViewById<View>(R.id.imageView) as ImageView
+            txtCount =
+                    view.findViewById<View>(R.id.txtCount) as TextView
         }
     }
 
