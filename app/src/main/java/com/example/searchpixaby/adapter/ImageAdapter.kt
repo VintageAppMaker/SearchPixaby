@@ -28,10 +28,10 @@ class ImageAdapter(var context: Context, var images: List<Hits>) :
         position: Int
     ) {
         val item = images[position]
-        item.previewURL
 
+        // large일 경우, 트래픽도 고려해야 함
         Glide.with(context)
-            .load(item.previewURL)
+            .load(item.largeImageURL)
             .fitCenter()
             .into(holder.imgThumb)
 
