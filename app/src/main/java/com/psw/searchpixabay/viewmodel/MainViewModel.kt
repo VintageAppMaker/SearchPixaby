@@ -2,9 +2,9 @@ package com.psw.adsloader.githubsearcher.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.searchpixaby.api.IORoutine
-import com.example.searchpixaby.api.api
-import com.example.searchpixaby.model.Hits
+import com.psw.searchpixabay.api.IORoutine
+import com.psw.searchpixabay.api.api
+import com.psw.searchpixabay.model.Hits
 
 class MainViewModel :ViewModel(){
     var bLoading : MutableLiveData<Boolean> =  MutableLiveData()
@@ -36,7 +36,7 @@ class MainViewModel :ViewModel(){
         // UI처리는 반드시 LiveData로 보낸다.
         // 그렇게 하지않으면 Context간의 차이로 App이 종료됨
         IORoutine({
-            val key = "certified key"
+            val key = "key 입력"
             val q = sKeyWord
             val image_type = "photo"
             val data = api.pix.listWithPage(key, q, image_type, page)

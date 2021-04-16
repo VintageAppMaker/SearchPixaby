@@ -1,4 +1,4 @@
-package com.example.searchpixaby.model
+package com.psw.searchpixabay.model
 import com.google.gson.annotations.SerializedName
 
 data class Hits (

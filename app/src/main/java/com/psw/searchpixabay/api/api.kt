@@ -1,4 +1,4 @@
-package com.example.searchpixaby.api
+package com.psw.searchpixabay.api
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

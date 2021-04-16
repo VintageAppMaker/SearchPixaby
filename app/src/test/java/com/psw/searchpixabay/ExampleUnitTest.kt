@@ -1,4 +1,4 @@
-package com.example.searchpixaby
+package com.psw.searchpixabay
 
 import org.junit.Test
 

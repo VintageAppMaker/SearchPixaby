@@ -1,6 +1,6 @@
-package com.example.searchpixaby.api
+package com.psw.searchpixabay.api
 
-import com.example.searchpixaby.model.RequestPic
+import com.psw.searchpixabay.model.RequestPic
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

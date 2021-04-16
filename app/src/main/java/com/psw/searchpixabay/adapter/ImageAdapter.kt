@@ -1,4 +1,4 @@
-package com.example.searchpixaby.adapter
+package com.psw.searchpixabay.adapter
 
 import android.content.Context
 import android.content.Intent
@@ -10,8 +10,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.searchpixaby.R
-import com.example.searchpixaby.model.Hits
+import com.psw.searchpixabay.R
+import com.psw.searchpixabay.model.Hits
 
 class ImageAdapter(var context: Context, var images: List<Hits>) :
     RecyclerView.Adapter<ImageAdapter.ViewHolder>() {
