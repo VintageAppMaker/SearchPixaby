@@ -39,7 +39,7 @@ class MainViewModel :ViewModel(){
             val key = "Key입력"
             val q = sKeyWord
             val image_type = "photo"
-            val data = api.function.listWithPage(key, q, image_type, page)
+            val data = api.pix.listWithPage(key, q, image_type, page)
             if(data == null) return@IORoutine
 
             // UI에 전송

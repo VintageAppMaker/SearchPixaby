@@ -8,7 +8,7 @@ import retrofit2.http.*
 import retrofit2.http.GET
 
 
-interface ApiService {
+interface PixabayReq {
 
     // 일반적인 API
     @GET("/api")

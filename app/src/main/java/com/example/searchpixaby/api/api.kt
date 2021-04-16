@@ -13,13 +13,13 @@ object api {
             setLevel(HttpLoggingInterceptor.Level.BODY)
         } )
 
-    val function: ApiService
+    val pix: PixabayReq
         get() {
             val retrofit = Retrofit.Builder()
                 .baseUrl(BASE)
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(builder.build())
                 .build()
-            return retrofit.create<ApiService>(ApiService::class.java!!)
+            return retrofit.create<PixabayReq>(PixabayReq::class.java!!)
         }
 }
